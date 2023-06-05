@@ -1,6 +1,6 @@
 ﻿$.validator.methods.range = function (value, element, param) {
     var globalizedValue = value.replace(",", ".");
-    re - turn this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+    return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
 }
 
 $.validator.methods.number = function (value, element) {

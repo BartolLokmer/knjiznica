@@ -13,20 +13,27 @@ namespace Knjiznica.Models
 
         [Required(ErrorMessage = "Polje {0} je obvezno")]
         public string Naziv { get; set; }
+
         [Required(ErrorMessage = "Polje {0} je obvezno")]
+
         [Display(Name = "Autor")]
+
+        [DataType(DataType.Text)]
         public string Autor { get; set; }
+
         [Required(ErrorMessage = "Polje {0} je obvezno")]
         [Display(Name = "Datum izlaska")]
         [DataType(DataType.Date)]
         public DateTime DatumIzlaska { get; set; }
 
-            [Required(ErrorMessage = "Polje {0} je obvezno")]
-            [DataType(DataType.Currency)]
-            public decimal Cijena { get; set; }
+        [Required(ErrorMessage = "Polje {0} je obvezno")]
+        [DataType(DataType.Currency)]
+        public decimal Cijena { get; set; }
+
         [Required(ErrorMessage = "Polje {0} je obvezno.")]
         [Display(Name = "Naslovna slika")]
         public string SlikaUrl { get; set; }
+
         [Display(Name = "Kategorija")]
         public int KategorijaId { get; set; }
 

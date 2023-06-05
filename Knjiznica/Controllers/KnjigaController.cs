@@ -60,7 +60,7 @@ namespace Knjiznica.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(int id, [Bind("Id,Naziv,DatumIzlaska,Cijena,SlikaUrl,KategorijaId")] Knjiga knjiga)
+        public IActionResult Update(int id, [Bind("Id,Naziv,Autor,DatumIzlaska,Cijena,SlikaUrl,KategorijaId")] Knjiga knjiga)
         {
             if (id != knjiga.Id)
             {
