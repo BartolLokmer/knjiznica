@@ -26,6 +26,8 @@
 </div>
  
 @section Scripts{
-    @{ await Html.RenderPartialAsync("_Validacija.cshtml"); }
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
  
 }
