@@ -99,6 +99,30 @@ namespace Knjiznica.Controllers
             _repozitorijUpita.Delete(knjiga);
             return RedirectToAction("Index");
         }
+        public ActionResult SearchIndex(string knjigaZanr, string searchString)
+        {
+            var zanr = new List<string>();
+
+            var zanrUpit = _repozitorijUpita.PopisKategorija();
+
+            ViewData["knjigaZanr"] = new SelectList(_repozitorijUpita.PopisKategorija(), "Naziv", "Naziv", zanrUpit);
+
+            var knjige = _repozitorijUpita.PopisKnjiga();
+
+            if (!String.IsNullOrWhiteSpace(searchString))
+            {
+                knjige = knjige.Where(s => s.Naziv.Contains(searchString, StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (string.IsNullOrWhiteSpace(knjigaZanr))
+                return View(knjige);
+            else
+            {
+                return View(knjige.Where(x => x.Kategorija.Naziv == knjigaZanr));
+            }
+
+        }
+
 
 
 
